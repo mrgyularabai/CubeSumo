@@ -8,7 +8,7 @@ public class P1 : MonoBehaviour
     public GameObject winTextO;
     public Rigidbody R;
     public Rigidbody RO;
-    public static float mul = 85f;
+    public static float mul = 850f;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,19 +40,27 @@ public class P1 : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W))
         {
-            R.AddForce(Vector3.forward * mul * Time.fixedDeltaTime, ForceMode.Impulse);
+            R.AddForce(Vector3.forward * mul * Time.fixedDeltaTime, ForceMode.Force);
         }
         if (Input.GetKey(KeyCode.S))
         {
-            R.AddForce(Vector3.back * mul * Time.fixedDeltaTime, ForceMode.Impulse);
+            R.AddForce(Vector3.back * mul * Time.fixedDeltaTime, ForceMode.Force);
         }
         if (Input.GetKey(KeyCode.A))
         {
-            R.AddForce(Vector3.left * mul * Time.fixedDeltaTime, ForceMode.Impulse);
+            R.AddForce(Vector3.left * mul * Time.fixedDeltaTime, ForceMode.Force);
         }
         if (Input.GetKey(KeyCode.D))
         {
-            R.AddForce(Vector3.right * mul * Time.fixedDeltaTime, ForceMode.Impulse);
+            R.AddForce(Vector3.right * mul * Time.fixedDeltaTime, ForceMode.Force);
+        }
+        if (Input.GetKey(KeyCode.E))
+        {
+            R.AddTorque(Vector3.up * mul * 0.5f * Time.fixedDeltaTime, ForceMode.Force);
+        }
+        if (Input.GetKey(KeyCode.Q))
+        {
+            R.AddTorque(Vector3.down * mul * 0.5f * Time.fixedDeltaTime, ForceMode.Force);
         }
     }
 

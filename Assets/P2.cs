@@ -16,21 +16,29 @@ public class P2 : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.I))
         {
-            R.AddForce(Vector3.forward * P1.mul * Time.fixedDeltaTime, ForceMode.Impulse);
+            R.AddForce(Vector3.forward * P1.mul * Time.fixedDeltaTime, ForceMode.Force);
         }
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.K))
         {
-            R.AddForce(Vector3.back * P1.mul * Time.fixedDeltaTime, ForceMode.Impulse);
+            R.AddForce(Vector3.back * P1.mul * Time.fixedDeltaTime, ForceMode.Force);
         }
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.J))
         {
-            R.AddForce(Vector3.left * P1.mul * Time.fixedDeltaTime, ForceMode.Impulse);
+            R.AddForce(Vector3.left * P1.mul * Time.fixedDeltaTime, ForceMode.Force);
         }
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.L))
         {
-            R.AddForce(Vector3.right * P1.mul * Time.fixedDeltaTime, ForceMode.Impulse);
+            R.AddForce(Vector3.right * P1.mul * Time.fixedDeltaTime, ForceMode.Force);
+        }
+        if (Input.GetKey(KeyCode.U))
+        {
+            R.AddTorque(Vector3.down * P1.mul * 0.5f * Time.fixedDeltaTime, ForceMode.Force);
+        }
+        if (Input.GetKey(KeyCode.O))
+        {
+            R.AddTorque(Vector3.up * P1.mul * 0.5f * Time.fixedDeltaTime, ForceMode.Force);
         }
     }
 
